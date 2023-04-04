@@ -1,0 +1,53 @@
+<!-- to list data of student -->
+
+<div class="table-title">
+ 
+    <div class="container margin-top">
+      <div class="row">
+        <div class="text-end">
+          <a routerLink="/add-Student" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary p-2">Add Employee</a>
+        </div>
+      </div>
+    </div>
+    <div class="container-xl">
+    <div class="container">
+      <h1>Employee Information</h1>
+        <table class="table table-striped table-hover table-bordered table-content" >
+          <thead>
+            <tr>
+              <th>firstName</th>
+              <th>lastName</th>
+              <th>Gender</th>
+              <th>MobileNo</th>
+              <th>EmailId</th>
+              <th>Address</th>
+              <th>employeeTypes</th>
+              <th>desName</th>
+              <th>deptName</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of employees">
+              <td>{{employee.firstName}}</td>
+              <td>{{employee.lastName}}</td>
+              <td>{{employee.gender}}</td>
+              <td>{{employee.mobileNo}}</td>
+              <td>{{employee.emailId}}</td>
+              <td>{{employee.address}}</td>
+              <td>{{employee.employeeTypes}}</td>
+              <td>{{employee.desName}}</td>
+              <td>{{employee.deptName}}</td>
+              
+                <td> 
+                  <!-- <a  [routerLink]="['/details/',student.id]" class="btn btn-warning"><i class="bi bi-info-circle-fill"></i></a>
+                  <a  [routerLink]="['/edit/',student.id]" class="btn btn-primary"><i class="bi bi-pencil-square"></i>
+                  </a>
+                  <button class="btn btn-danger" (click)="openModal(student.id)"><i class="bi bi-trash"></i></button>            -->
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+     
