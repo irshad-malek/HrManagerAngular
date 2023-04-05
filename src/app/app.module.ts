@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from  '@angular/common/http';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { AddEmployeeComponent } from './Component/add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FooterComponent } from './common/footer/footer.component';
     EmployeeComponent,
     NavbarComponent,
     FooterComponent,
+    AddEmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { FooterComponent } from './common/footer/footer.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ AddEmployeeComponent ]
 })
 export class AppModule { }
