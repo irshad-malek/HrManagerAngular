@@ -66,9 +66,7 @@ export class AddEmployeeComponent implements OnInit {
       })  
   }
   }
-  ngOnChanges(){
-
-  }
+  
   get activeModal() {
     return this._NgbActiveModal;
   }

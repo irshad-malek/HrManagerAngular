@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { DetailsEmployeeComponent } from './Component/details-employee/details-employee.component';
 import { DeleteEmployeeComponent } from './Component/delete-employee/delete-employee.component';
+import { EditEmployeeComponent } from './Component/edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DeleteEmployeeComponent } from './Component/delete-employee/delete-empl
     AddEmployeeComponent,
     DetailsEmployeeComponent,
     DeleteEmployeeComponent,
+    EditEmployeeComponent,
   ],
   imports: [
     BrowserModule,
