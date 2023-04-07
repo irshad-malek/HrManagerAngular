@@ -35,7 +35,6 @@ export class DetailsEmployeeComponent {
       this.emp.DesgId = res.desgId
       this.emp.CId = res.cId
       // this.emp=res
-      console.log(res)
     })
   }
   ngOnInit(): void {

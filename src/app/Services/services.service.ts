@@ -12,11 +12,11 @@ export class ServicesService {
   private empId: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   getEmployeeById(empId: Employee) {
-    debugger
+    
         this.empId.next(empId);
   }
   getMethod() {
-    debugger
+    
     
       return this.empId.asObservable();
 
@@ -26,7 +26,7 @@ export class ServicesService {
     return this.http.get(this.url+"api/Employee/GetCompanyList")
   }
   getEmployeeByID(empId):Observable<any>{
-    debugger
+    
       return this.http.get<any>(this.url+"api/Employee/getEmployeeById/"+empId);
   }
   employeeList(){

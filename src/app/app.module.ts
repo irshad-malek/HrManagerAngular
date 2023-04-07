@@ -3,17 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeComponent } from './Component/employee/employee.component';
+import { EmployeeComponent } from './Component/Employees/employee/employee.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from  '@angular/common/http';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { FooterComponent } from './common/footer/footer.component';
-import { AddEmployeeComponent } from './Component/add-employee/add-employee.component';
+import { AddEmployeeComponent } from './Component/Employees/add-employee/add-employee.component';
 import { FormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { DetailsEmployeeComponent } from './Component/details-employee/details-employee.component';
-import { DeleteEmployeeComponent } from './Component/delete-employee/delete-employee.component';
-import { EditEmployeeComponent } from './Component/edit-employee/edit-employee.component';
+import { DetailsEmployeeComponent } from './Component/Employees/details-employee/details-employee.component';
+import { DeleteEmployeeComponent } from './Component/Employees/delete-employee/delete-employee.component';
+import { EditEmployeeComponent } from './Component/Employees/edit-employee/edit-employee.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,10 @@ import { EditEmployeeComponent } from './Component/edit-employee/edit-employee.c
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,    
     FormsModule,
-    NgMultiSelectDropDownModule
+    NgMultiSelectDropDownModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

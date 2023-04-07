@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { Employee } from '../../Models/employee';
+import { Employee } from '../../../Models/employee';
 import { ServicesService } from 'src/app/Services/services.service';
 import { NgForm } from '@angular/forms';
 import { IDropdownSettings, NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
@@ -25,7 +25,7 @@ export class AddEmployeeComponent implements OnInit {
   constructor(private _NgbActiveModal: NgbActiveModal, private service: ServicesService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
-    debugger
+    
 
     this.service.getDepartment().subscribe(res => {
       this.deptdropdownList = res
@@ -52,7 +52,7 @@ export class AddEmployeeComponent implements OnInit {
 
 
   onSubmit(form): void {
-    debugger
+    
 
     if (form.invalid) {
       return
@@ -67,7 +67,7 @@ export class AddEmployeeComponent implements OnInit {
     form.reset();
   }
   addEmployee() {
-    debugger
+    
     this.service.addEmployee(this.emp).subscribe((res) => {
       this.toastr.success('', 'Record inserted', {timeOut: 3000})
             this.activeModal.close(true)

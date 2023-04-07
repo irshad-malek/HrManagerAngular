@@ -19,7 +19,7 @@ export class DeleteEmployeeComponent {
     )
   }
   confirmDelete(employee){
-    debugger
+    
     this.service.DeleteEmployee(employee).subscribe((response) => {
       this.toastr.success('', 'Record Deleted', {timeOut: 3000})
 

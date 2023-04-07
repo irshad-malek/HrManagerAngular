@@ -33,7 +33,7 @@ export class EmployeeComponent implements OnInit {
      }).catch((res) => {});
   }
   openModal() {
-    debugger
+    
     
     
 

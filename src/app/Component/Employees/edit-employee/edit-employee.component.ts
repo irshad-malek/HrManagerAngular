@@ -22,7 +22,7 @@ export class EditEmployeeComponent {
 
   }
   ngOnInit(): void {
-    debugger
+    
     this.service.getMethod().subscribe(res => {        
       this.id = res
       })
