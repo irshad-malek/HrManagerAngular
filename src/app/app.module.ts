@@ -16,6 +16,8 @@ import { DeleteEmployeeComponent } from './Component/Employees/delete-employee/d
 import { EditEmployeeComponent } from './Component/Employees/edit-employee/edit-employee.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LeaveRequestComponent } from './Component/Admin/leave-request/leave-request.component';
+import { LeaveApplyComponent } from './Component/User/leave/leave-apply/leave-apply.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DetailsEmployeeComponent,
     DeleteEmployeeComponent,
     EditEmployeeComponent,
+    LeaveRequestComponent,
+    LeaveApplyComponent,
   ],
   imports: [
     BrowserModule,
