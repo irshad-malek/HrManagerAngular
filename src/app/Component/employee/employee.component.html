@@ -5,7 +5,7 @@
     <div class="container margin-top">
       <div class="row">
         <div class="text-end">
-          <a (click)="openModal(null)" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary p-2">Add Employee</a>
+          <a (click)="openModal()" routerLinkActive="active" ariaCurrentWhenActive="page" class="btn btn-primary p-2">Add Employee</a>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
               
                 <td> 
                    <a  (click)="openModalDetails(employee.empId)" class="btn btn-warning"><i class="bi bi-info-circle-fill"></i></a>
-                  <a  (click)="openModal(employee.empId)" class="btn btn-primary"><i class="bi bi-pencil-square"></i>
+                  <a  (click)="openModalEdit(employee.empId)" class="btn btn-primary"><i class="bi bi-pencil-square"></i>
                   </a>
                   <button class="btn btn-danger" (click)="openModalDelete(employee.empId)"><i class="bi bi-trash"></i></button>            
                 </td>

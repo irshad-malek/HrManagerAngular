@@ -36,6 +36,6 @@ import { EditEmployeeComponent } from './Component/edit-employee/edit-employee.c
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ AddEmployeeComponent,DetailsEmployeeComponent,DeleteEmployeeComponent]
+  entryComponents: [ AddEmployeeComponent,DetailsEmployeeComponent,DeleteEmployeeComponent,EditEmployeeComponent]
 })
 export class AppModule { }
