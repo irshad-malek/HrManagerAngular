@@ -9,6 +9,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from  '@angular/common/http';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { AddEmployeeComponent } from './Component/add-employee/add-employee.component';
+import { FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { DetailsEmployeeComponent } from './Component/details-employee/details-employee.component';
+import { DeleteEmployeeComponent } from './Component/delete-employee/delete-employee.component';
 
 @NgModule({
   declarations: [
@@ -17,15 +21,19 @@ import { AddEmployeeComponent } from './Component/add-employee/add-employee.comp
     NavbarComponent,
     FooterComponent,
     AddEmployeeComponent,
+    DetailsEmployeeComponent,
+    DeleteEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgMultiSelectDropDownModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ AddEmployeeComponent ]
+  entryComponents: [ AddEmployeeComponent,DetailsEmployeeComponent,DeleteEmployeeComponent]
 })
 export class AppModule { }
