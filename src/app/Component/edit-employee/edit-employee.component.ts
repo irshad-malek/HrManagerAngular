@@ -22,7 +22,9 @@ export class EditEmployeeComponent {
   }
   ngOnInit(): void {
     debugger
-
+    this.service.getMethod().subscribe(res => {        
+      this.id = res
+      })
       this.detailEmployee(this.id);
     this.service.getDepartment().subscribe(res => {
       this.deptdropdownList = res
@@ -37,9 +39,7 @@ export class EditEmployeeComponent {
       this.companyList = res
     })
     this.service.getEmployeeRole().subscribe(res => this.employeeRoleList = res)
-      this.service.getMethod().subscribe(res => {        
-        this.id = res
-        })
+      
         
   }
   detailEmployee(id) {
