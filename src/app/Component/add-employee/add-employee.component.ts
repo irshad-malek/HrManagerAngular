@@ -4,6 +4,7 @@ import { Employee } from '../../Models/employee';
 import { ServicesService } from 'src/app/Services/services.service';
 import { NgForm } from '@angular/forms';
 import { IDropdownSettings, NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-employee',
@@ -12,41 +13,20 @@ import { IDropdownSettings, NgMultiSelectDropDownModule } from 'ng-multiselect-d
 })
 export class AddEmployeeComponent implements OnInit {
   emp = new Employee();
-  
+
   deptdropdownList;
   empTypeList;
   designationList;
   employeeRoleList;
   companyList;
-  
-  
-  isAddMode: boolean;
+
+
   id: number;
-  selected;
-  constructor(private _NgbActiveModal: NgbActiveModal, private service: ServicesService) { }
-  cities
-  detailEmployee(id) {
-    this.service.getEmployeeByID(id).subscribe(res => {
-      this.emp.FirstName = res.firstName
-      this.emp.LastName = res.lastName
-      this.emp.Gender = res.gender
-      this.emp.MobileNo = res.mobileNo
-      this.emp.EmailId = res.emailId
-      this.emp.Address = res.address
-      //this.deptdropdownList=res.deptId
-      this.emp.DeptId = res.deptId
-      this.emp.EmpTypeId = res.empTypeId
-      this.emp.EmployeeRoleId = res.employeeRoleId
-      this.emp.DesgId = res.desgId
-      this.emp.CId = res.cId
-      // this.emp=res
-    })
-  }
+  constructor(private _NgbActiveModal: NgbActiveModal, private service: ServicesService,private toastr:ToastrService) { }
+
   ngOnInit(): void {
     debugger
 
-    this.isAddMode = !this.id;
-      this.detailEmployee(this.id);
     this.service.getDepartment().subscribe(res => {
       this.deptdropdownList = res
     })
@@ -60,29 +40,26 @@ export class AddEmployeeComponent implements OnInit {
       this.companyList = res
     })
     this.service.getEmployeeRole().subscribe(res => this.employeeRoleList = res)
-    if (!this.isAddMode) {
-      this.service.getMethod().subscribe(res => {        
-        this.id = res
-      })  
+    this.service.getMethod().subscribe(res => {
+      this.id = res
+    })
+
   }
-  }
-  
+
   get activeModal() {
     return this._NgbActiveModal;
   }
 
-  
+
   onSubmit(form): void {
     debugger
-   
+
     if (form.invalid) {
       return
     } else {
-      if (this.isAddMode) {
-        this.addEmployee();
-      } else {
-        this.updateEmp();
-      }
+
+      this.addEmployee();
+
 
     }
   }
@@ -92,16 +69,9 @@ export class AddEmployeeComponent implements OnInit {
   addEmployee() {
     debugger
     this.service.addEmployee(this.emp).subscribe((res) => {
-      alert("record inserted")
-      this.activeModal.close(true)
+      this.toastr.success('', 'Record inserted', {timeOut: 3000})
+            this.activeModal.close(true)
     })
   }
-  updateEmp() {
-    this.service.updateEmployee(this.id, this.emp)
-      .subscribe(() => {
-        alert("update successfully");
-        this.activeModal.close(true)
-      })
-  }
-  
+
 }

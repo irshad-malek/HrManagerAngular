@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Employee } from 'src/app/Models/employee';
 import { ServicesService } from 'src/app/Services/services.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-employee',
@@ -17,7 +18,7 @@ export class EditEmployeeComponent {
   employeeRoleList;
   companyList;
   id;
-  constructor(private _NgbActiveModal: NgbActiveModal, private service: ServicesService){
+  constructor(private _NgbActiveModal: NgbActiveModal, private service: ServicesService,private toastr:ToastrService){
 
   }
   ngOnInit(): void {
@@ -69,7 +70,7 @@ export class EditEmployeeComponent {
   updateEmp() {
     this.service.updateEmployee(this.id, this.emp)
       .subscribe(() => {
-        alert("update successfully");
+        this.toastr.success('', 'Record Updated', {timeOut: 3000})
         this.activeModal.close(true)
       })
   }
