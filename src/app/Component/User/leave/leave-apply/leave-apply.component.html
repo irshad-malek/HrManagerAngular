@@ -1,1 +1,107 @@
-<p>leave-apply works!</p>
+<div>
+    <div class="container ">
+
+        <div class=" row justify-content-center">
+            <div class="col-md-6 text-left bg-white rounded shadow py-3">
+                <div>
+                    <div class="card-header">
+                        <h3>leave Apply</h3>
+                    </div>
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f)">
+                        
+                        <div class="form-group">
+                            <label>Leave Type<span class="text-danger">*</span></label>
+                            <select required name="ltId" [(ngModel)]="leave.ltId" #ltId="ngModel" class="form-control">
+                                <option value="undefined">Please select value</option>
+                                <option *ngFor="let leaveType of leaveTypes" [ngValue]="leaveType.ltId">
+                                  {{leaveType.leaveType}}
+                                </option>
+                              </select>
+                              <div *ngIf="f.submitted && ltId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="ltId.errors['required']">Leave Type is required</span>
+                  
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label>fromDate<span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" [(ngModel)]="leave.fromDate" name="fromDate"
+                                #fromDate="ngModel" required>
+                                <div *ngIf="f.submitted && fromDate.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="fromDate.errors['required']">fromDate is required</span>
+                      
+                                  </div>
+                        </div>
+                        <div class="form-group">
+                            <label>toDate<span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" [(ngModel)]="leave.toDate" name="toDate"
+                                #toDate="ngModel" required>
+                                <div *ngIf="f.submitted && toDate.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="toDate.errors['required']">toDate is required</span>
+                      
+                                  </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Session<span class="text-danger">*</span></label>
+                            <select required name="sId" [(ngModel)]="leave.sId" #sId="ngModel" class="form-control">
+                                <option value="undefined">Please select value</option>
+                                <option *ngFor="let session of sessions" [ngValue]="session.sId">
+                                  {{session.session}}
+                                </option>
+                              </select>
+                              <div *ngIf="f.submitted && sId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="sId.errors['required']">Session is required</span>
+                  
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label>applyTo<span class="text-danger">*</span></label>
+                            <select required name="aId" [(ngModel)]="leave.aId" #aId="ngModel" class="form-control">
+                                <option value="undefined">Please select value</option>
+                                <option *ngFor="let leaveApprove of leaveApproves" [ngValue]="leaveApprove.aId">
+                                  {{leaveApprove.firstName}}
+                                </option>
+                              </select>
+                              <div *ngIf="f.submitted && aId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="aId.errors['required']">apply to is required</span>
+                  
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label>contact<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" [(ngModel)]="leave.contact" name="contact"
+                                #contact="ngModel" required>
+                                <div *ngIf="f.submitted && contact.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="contact.errors['required']">contact is required</span>
+                      
+                                  </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Reason<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" [(ngModel)]="leave.reason" name="reason"
+                                #reason="ngModel" required>
+                                <div *ngIf="f.submitted && reason.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="reason.errors['required']">reason is required</span>
+                      
+                                  </div>
+                        </div>
+                        <div  class="form-group">
+                            <label>EmpId<span class="text-danger">*</span></label>
+                            <select  name="empId" [(ngModel)]="leave.empId" #empId="ngModel" class="form-control">
+                                <option value="undefined">Please select value</option>
+                                <option *ngFor="let employee of employees" [ngValue]="employee.empId">
+                                  {{employee.empId}}
+                                </option>
+                              </select>
+                            
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" >Submit</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
