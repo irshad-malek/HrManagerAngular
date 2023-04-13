@@ -18,6 +18,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LeaveRequestComponent } from './Component/Admin/leave-request/leave-request.component';
 import { LeaveApplyComponent } from './Component/User/leave/leave-apply/leave-apply.component';
+import { AssigneeComponent } from './Component/Admin/assignee/assignee.component';
+import { AssigneeRoleListComponent } from './Component/Admin/assignee-role-list/assignee-role-list.component';
+import { EmployeeSalaryComponent } from './Component/Admin/employee-salary/employee-salary.component';
+import { LoginComponent } from './Component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,11 @@ import { LeaveApplyComponent } from './Component/User/leave/leave-apply/leave-ap
     EditEmployeeComponent,
     LeaveRequestComponent,
     LeaveApplyComponent,
+    AssigneeComponent,
+    AssigneeRoleListComponent,
+    EmployeeSalaryComponent,
+    LoginComponent,
+  
   ],
   imports: [
     BrowserModule,
