@@ -7,7 +7,6 @@ import { AssigneeComponent } from './Component/Admin/assignee/assignee.component
 import { AssigneeRoleListComponent } from './Component/Admin/assignee-role-list/assignee-role-list.component';
 import { EmployeeSalaryComponent } from './Component/Admin/employee-salary/employee-salary.component';
 import { LoginComponent } from './Component/login/login.component';
-import { EmployeeSalaryListComponent } from './Component/Admin/employee-salary-list/employee-salary-list.component';
 
 const routes: Routes = [{
   path: '', component: LoginComponent,
@@ -32,9 +31,6 @@ const routes: Routes = [{
 },
 {
   path:'login',component:LoginComponent
-},
-{
-  path:'EmpSalaryList',component:EmployeeSalaryListComponent
 }];
 
 @NgModule({
