@@ -1,0 +1,87 @@
+<div class="modal-header">
+  <h4 class="modal-title">Employee Salary </h4>
+  <button type="button" class="btn btn-danger" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    <div >
+
+        <div >
+            <div >
+                <div>
+                    <div class="card-header">
+                        <h3>Add Employee salary</h3>
+                    </div>
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f)">
+                        <div class="form-group">
+                            <label>Employee Name<span class="text-danger">*</span></label>
+                            <select required name="Department" #EmpId="ngModel" class="form-control" [(ngModel)]="empSalary.EmpId">
+                              <option value="undefined">Please select Value</option>
+                              <option *ngFor="let employee of Employees" [ngValue]="employee.empId">
+                                {{employee.firstName}}
+                              </option>
+                            </select>   
+                            <div *ngIf="f.submitted && EmpId.errors" class="text-danger">
+                              <span style="font-size:.875em;" *ngIf="EmpId.errors['required']">Name is required</span>
+                
+                            </div>                        
+                          </div>
+                        <div class="form-group">
+                            <label>basic Salary<span class="text-danger">*</span></label>
+                          
+                              <input type="number" class="form-control" [(ngModel)]="empSalary.BasicsSalary" name="BasicsSalary" #BasicsSalary="ngModel"
+                              required> 
+                              <div *ngIf="f.submitted && BasicsSalary.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="BasicsSalary.errors['required']">BasicsSalary is required</span>
+                  
+                              </div>                              
+                        </div>
+                      
+                        <div class="form-group">
+                            <label>HouseRent allowance<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" [(ngModel)]="empSalary.HouseRent" name="HouseRent" #HouseRent="ngModel"
+                              required>
+                              <div *ngIf="f.submitted && HouseRent.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="HouseRent.errors['required']">HouseRent is required</span>
+                  
+                              </div>  
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Medical allowance<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" [(ngModel)]="empSalary.Medical" name="Medical" #Medical="ngModel"
+                              required>
+                              <div *ngIf="f.submitted && Medical.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="Medical.errors['required']">Medical allowance is required</span>
+                  
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label>GrossSalary allowance<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" [(ngModel)]="empSalary.GrossSalary" name="GrossSalary" #GrossSalary="ngModel"
+                              required>
+                              <div *ngIf="f.submitted && GrossSalary.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="GrossSalary.errors['required']">GrossSalary is required</span>
+                  
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Taxes<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" [(ngModel)]="empSalary.Taxes" name="Taxes" #Taxes="ngModel"
+                              required>
+                              <div *ngIf="f.submitted && Taxes.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="Taxes.errors['required']">Taxes is required</span>
+                  
+                              </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" >Submit</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -22,7 +22,10 @@ import { AssigneeComponent } from './Component/Admin/assignee/assignee.component
 import { AssigneeRoleListComponent } from './Component/Admin/assignee-role-list/assignee-role-list.component';
 import { EmployeeSalaryComponent } from './Component/Admin/employee-salary/employee-salary.component';
 import { LoginComponent } from './Component/login/login.component';
-
+import { EmployeeSalaryListComponent } from './Component/Admin/employee-salary-list/employee-salary-list.component';
+import { UpdateEmpSalaryComponent } from './Component/Admin/update-emp-salary/update-emp-salary.component';
+import { DetailsEmpSalaryComponent } from './Component/Admin/details-emp-salary/details-emp-salary.component';
+import { DeleteEmpSalaryComponent } from './Component/Admin/delete-emp-salary/delete-emp-salary.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,10 @@ import { LoginComponent } from './Component/login/login.component';
     AssigneeRoleListComponent,
     EmployeeSalaryComponent,
     LoginComponent,
-  
+    EmployeeSalaryListComponent,
+    UpdateEmpSalaryComponent,
+    DetailsEmpSalaryComponent,
+    DeleteEmpSalaryComponent
   ],
   imports: [
     BrowserModule,
