@@ -24,7 +24,7 @@ export class EmployeeSalaryListComponent {
   }
 empSalary(){
   this.service.getEmployeeSalary().subscribe(res=>{
-    this.employeeSalory=res
+    this.employeeSalory=res.data
   })
 }
   openModal(){
@@ -44,7 +44,7 @@ empSalary(){
       if(confirm==true)
       {
        this.service.getEmployeeSalary().subscribe(
-         data => this.employeeSalory = data
+         res => this.employeeSalory = res.data
        )}
      }).catch((res) => {});
   }
@@ -54,7 +54,7 @@ empSalary(){
       if(confirm==true)
       {
        this.service.getEmployeeSalary().subscribe(
-         data => this.employeeSalory = data
+        res => this.employeeSalory = res.data
        )}
      }).catch((res) => {});
   }
@@ -64,7 +64,7 @@ empSalary(){
       if(confirm==true)
       {
        this.service.getEmployeeSalary().subscribe(
-         data => this.employeeSalory = data
+         res => this.employeeSalory = res.data
        )}
      }).catch((res) => {});
   }

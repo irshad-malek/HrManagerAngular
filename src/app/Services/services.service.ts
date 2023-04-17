@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from '../Models/employee';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, single } from 'rxjs';
 import { leaveApply } from '../Models/leaveApply';
 import { employeeSalary } from '../Models/employeeSalary';
 
@@ -11,11 +11,18 @@ import { employeeSalary } from '../Models/employeeSalary';
 export class ServicesService {
   url="https://localhost:7085/"
   constructor(private http: HttpClient) { }
+  salaryDetails=new employeeSalary();
   private empId: BehaviorSubject<any> = new BehaviorSubject<any>(null);
-
+  private sId:BehaviorSubject<any> = new BehaviorSubject<any>(null);
   getEmployeeById(empId: Employee) {
     
         this.empId.next(empId);
+  }
+  getEmpSalaryById(sId:employeeSalary){
+    this.sId.next(sId);
+  }
+  getEmpSalaryMethod(){
+    return this.sId.asObservable();
   }
   getMethod() {  
       return this.empId.asObservable();   
@@ -26,6 +33,10 @@ export class ServicesService {
   getEmployeeByID(empId):Observable<any>{   
       return this.http.get<any>(this.url+"api/Employee/getEmployeeById/"+empId);
   }
+  getSalaryByEmpID(salaryDetails):Observable<any>{
+    return this.http.get<any>(this.url+"api/salary/getEmpSalary/"+salaryDetails)
+  }
+
   employeeList(){
     return this.http.get(this.url+"api/Employee/getEmployees");
   }
@@ -87,5 +98,19 @@ export class ServicesService {
   }
   getLeaveRequest(){
     return this.http.get(this.url+"api/ApprovedLeave/getLeaveRequest");
+  }
+  getEmployeeSalary():Observable<any>{
+    return this.http.get<any>(this.url+"api/Salary/salaryListOfEmp");
+  }
+  
+  getEmpSalary(sId):Observable<any>{
+    return this.http.get<any>(this.url+"api/Salary/getEmpSalary"+sId)
+  }
+
+  deleteEmpSalary(sId){
+    return this.http.delete(this.url+"api/Salary/deleteEmpSalary/"+sId)
+  }
+  updateEmployeeSalary(sId,empSalary){
+    return this.http.put(this.url+"api/Salary/updateEmployeeSalary/"+sId,empSalary)
   }
 }

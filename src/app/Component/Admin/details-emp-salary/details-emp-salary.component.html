@@ -1,4 +1,9 @@
-
+<div class="modal-header">
+  <h4 class="modal-title">Delete</h4>
+  <button type="button" class="btn btn-danger" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
   <div class="modal-body">
       <div >
   
@@ -47,8 +52,8 @@
                                
                           </div>
                           <div class="form-group">
-                              <label>Taxes<span class="text-danger">*</span></label>
-                              <input type="number" disabled class="form-control" [(ngModel)]="empSalary.Taxes" name="Taxes" #Taxes="ngModel"
+                              <label>TaxAmount<span class="text-danger">*</span></label>
+                              <input type="number" disabled class="form-control" [(ngModel)]="empSalary.taxAmount" name="taxAmount" #taxAmount="ngModel"
                                 required>
                                 
                           </div>

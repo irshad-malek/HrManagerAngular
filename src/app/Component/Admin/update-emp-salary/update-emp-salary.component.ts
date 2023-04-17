@@ -28,13 +28,13 @@ export class UpdateEmpSalaryComponent {
   }
   getSalaryEmpDetails(sId){
     return this.service.getSalaryByEmpID(sId).subscribe(res=>{
-      this.empSalary.BasicsSalary=res.basicsSalary
-      this.empSalary.EmpId=res.empId
-      this.empSalary.GrossSalary=res.grossSalary
-      this.empSalary.HouseRent=res.houseRent
-      this.empSalary.Medical=res.medical
-      this.empSalary.Taxes=res.taxes
-      console.log(res)
+      this.empSalary.BasicsSalary=res.data.basicsSalary
+      this.empSalary.EmpId=res.data.empId
+      this.empSalary.GrossSalary=res.data.grossSalary
+      this.empSalary.HouseRent=res.data.houseRent
+      this.empSalary.Medical=res.data.medical
+      this.empSalary.taxAmount=res.data.taxAmount
+      // console.log(res.data.basicsSalary)
     })
   }
   onSubmit(form):void{
