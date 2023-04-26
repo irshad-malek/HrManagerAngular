@@ -14,7 +14,11 @@ import { UpdateEmpSalaryComponent } from '../update-emp-salary/update-emp-salary
 })
 export class EmployeeSalaryListComponent {
   employeeSalory;
+  headers: string[] = [];
+  public objectKeys: any;
+
   constructor(private service:ServicesService,public nav:NavbarService,public modalService: NgbModal){
+    this.objectKeys = Object.keys;
 
   }
   ngOnInit():void{
@@ -24,7 +28,9 @@ export class EmployeeSalaryListComponent {
   }
 empSalary(){
   this.service.getEmployeeSalary().subscribe(res=>{
-    this.employeeSalory=res.data
+     this.employeeSalory=res.data
+    this.headers = Object.keys(res.data[0]);
+    console.log(res.data)
   })
 }
   openModal(){

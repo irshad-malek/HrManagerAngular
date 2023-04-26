@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from '../Models/employee';
-import { BehaviorSubject, Observable, single } from 'rxjs';
+import { BehaviorSubject, Observable, map, single, tap } from 'rxjs';
 import { leaveApply } from '../Models/leaveApply';
 import { employeeSalary } from '../Models/employeeSalary';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
+import { login } from '../Models/login';
 
 @Injectable({
   providedIn: 'root'
@@ -64,20 +66,21 @@ export class ServicesService {
   DeleteEmployee(empId){
     return this.http.delete(this.url+"api/Employee/emloyeeDelete/"+empId)
   }
-  getLeaveType(){
-    return this.http.get(this.url+"api/leaveApply/getLeaveType")
+  getLeaveType():Observable<any>{
+    return this.http.get<any>(this.url+"api/leaveApply/getLeaveType")
   }
-  getSession(){
-    return this.http.get(this.url+"api/leaveApply/getSession");
+  getSession():Observable<any>{
+    return this.http.get<any>(this.url+"api/leaveApply/getSession");
   }
-  getEmployee(){
-    return this.http.get(this.url+"api/leaveApply/GetEmployee");
+  getEmployee():Observable<any>{
+    return this.http.get<any>(this.url+"api/leaveApply/GetEmployee");
   }
-  getLeaveApproved(){
-    return this.http.get(this.url+"api/leaveApply/getLeaveApproved");
+  getLeaveApproved():Observable<any>{
+    return this.http.get<any>(this.url+"api/leaveApply/getManager/"+localStorage.getItem("emailId"));
   }
-  leaveSubmit(leave:leaveApply){
-    return this.http.post(this.url+"api/leaveApply/leaveApplys",leave)
+  leaveSubmit(leave:leaveApply,emailId){
+    debugger
+    return this.http.post(this.url+"api/leaveApply/leaveApplys/"+emailId,leave)
   }
   getJuniourAssign(){
     return this.http.get(this.url+"api/Assignee/juniourAssign");
@@ -103,6 +106,7 @@ export class ServicesService {
     return this.http.get<any>(this.url+"api/Salary/salaryListOfEmp");
   }
   
+
   getEmpSalary(sId):Observable<any>{
     return this.http.get<any>(this.url+"api/Salary/getEmpSalary"+sId)
   }
@@ -112,5 +116,22 @@ export class ServicesService {
   }
   updateEmployeeSalary(sId,empSalary){
     return this.http.put(this.url+"api/Salary/updateEmployeeSalary/"+sId,empSalary)
+  }
+  login(logins:login): Observable<login> {
+    return this.http
+      .post<any>(`${this.url}api/Account/login`,logins)
+      .pipe(
+        tap((response) => {``
+        console.log(response)
+          localStorage.setItem('access_token', response.token);
+        })
+      );
+  }
+  logout() {
+    localStorage.removeItem('access_token');
+  }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('access_token');
   }
 }

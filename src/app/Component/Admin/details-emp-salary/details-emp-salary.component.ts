@@ -19,7 +19,7 @@ export class DetailsEmpSalaryComponent {
   }
   ngOnInit(){
     this.service.getEmployee().subscribe(res=>{
-      this.Employees=res;
+      this.Employees=res.data;
     })
     this.service.getEmpSalaryMethod().subscribe(
       data => this.sId = data

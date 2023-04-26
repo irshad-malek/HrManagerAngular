@@ -26,6 +26,7 @@ import { EmployeeSalaryListComponent } from './Component/Admin/employee-salary-l
 import { UpdateEmpSalaryComponent } from './Component/Admin/update-emp-salary/update-emp-salary.component';
 import { DetailsEmpSalaryComponent } from './Component/Admin/details-emp-salary/details-emp-salary.component';
 import { DeleteEmpSalaryComponent } from './Component/Admin/delete-emp-salary/delete-emp-salary.component';
+import { LoginInterceptor } from './Interceptors/login.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,13 @@ import { DeleteEmpSalaryComponent } from './Component/Admin/delete-emp-salary/de
     NgMultiSelectDropDownModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoginInterceptor,
+      multi: true
+     }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [ AddEmployeeComponent,DetailsEmployeeComponent,DeleteEmployeeComponent,EditEmployeeComponent]
 })

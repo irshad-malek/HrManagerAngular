@@ -1,4 +1,5 @@
 <div>
+
     <div class="container ">
 
         <div class=" row justify-content-center">
@@ -11,89 +12,89 @@
                         
                         <div class="form-group">
                             <label>Leave Type<span class="text-danger">*</span></label>
-                            <select required name="ltId" [(ngModel)]="leave.ltId" #ltId="ngModel" class="form-control">
+                            <select required name="LeaveTypeId" [(ngModel)]="leave.LeaveTypeId" #LeaveTypeId="ngModel" class="form-control">
                                 <option value="undefined">Please select value</option>
-                                <option *ngFor="let leaveType of leaveTypes" [ngValue]="leaveType.ltId">
-                                  {{leaveType.leaveType}}
+                                <option *ngFor="let leaveType of leaveTypes" [ngValue]="leaveType.leaveTypeId">
+                                  {{leaveType.leaveTypes}}
                                 </option>
                               </select>
-                              <div *ngIf="f.submitted && ltId.errors" class="text-danger">
-                                <span style="font-size:.875em;" *ngIf="ltId.errors['required']">Leave Type is required</span>
+                              <div *ngIf="f.submitted && LeaveTypeId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="LeaveTypeId.errors['required']">Leave Type is required</span>
                   
                               </div>
                         </div>
                         <div class="form-group">
                             <label>fromDate<span class="text-danger">*</span></label>
-                            <input type="date" class="form-control" [(ngModel)]="leave.fromDate" name="fromDate"
-                                #fromDate="ngModel" required>
-                                <div *ngIf="f.submitted && fromDate.errors" class="text-danger">
-                                    <span style="font-size:.875em;" *ngIf="fromDate.errors['required']">fromDate is required</span>
+                            <input type="date" class="form-control" [(ngModel)]="leave.Fromdate" name="Fromdate"
+                                #Fromdate="ngModel" required>
+                                <div *ngIf="f.submitted && Fromdate.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="Fromdate.errors['required']">fromDate is required</span>
                       
                                   </div>
                         </div>
                         <div class="form-group">
                             <label>toDate<span class="text-danger">*</span></label>
-                            <input type="date" class="form-control" [(ngModel)]="leave.toDate" name="toDate"
-                                #toDate="ngModel" required>
-                                <div *ngIf="f.submitted && toDate.errors" class="text-danger">
-                                    <span style="font-size:.875em;" *ngIf="toDate.errors['required']">toDate is required</span>
+                            <input type="date" class="form-control" [(ngModel)]="leave.ToDate" name="ToDate"
+                                #ToDate="ngModel" required>
+                                <div *ngIf="f.submitted && ToDate.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="ToDate.errors['required']">toDate is required</span>
                       
                                   </div>
                         </div>
                         <div class="form-group">
                             <label>Session<span class="text-danger">*</span></label>
-                            <select required name="sId" [(ngModel)]="leave.sId" #sId="ngModel" class="form-control">
+                            <select required name="SId" [(ngModel)]="leave.SId" #SId="ngModel" class="form-control">
                                 <option value="undefined">Please select value</option>
-                                <option *ngFor="let session of sessions" [ngValue]="session.sId">
-                                  {{session.session}}
+                                <option *ngFor="let session of sessions" [ngValue]="session.sessionId">
+                                  {{session.sessions}}
                                 </option>
                               </select>
-                              <div *ngIf="f.submitted && sId.errors" class="text-danger">
-                                <span style="font-size:.875em;" *ngIf="sId.errors['required']">Session is required</span>
+                              <div *ngIf="f.submitted && SId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="SId.errors['required']">Session is required</span>
                   
                               </div>
                         </div>
                         <div class="form-group">
                             <label>applyTo<span class="text-danger">*</span></label>
-                            <select required name="aId" [(ngModel)]="leave.aId" #aId="ngModel" class="form-control">
+                            <select required name="ManagerId" [(ngModel)]="leave.ManagerId" #ManagerId="ngModel" class="form-control">
                                 <option value="undefined">Please select value</option>
-                                <option *ngFor="let leaveApprove of leaveApproves" [ngValue]="leaveApprove.aId">
-                                  {{leaveApprove.firstName}}
+                                <option *ngFor="let leaveApprove of leaveApproves" [ngValue]="leaveApprove.managerId">
+                                  {{leaveApprove.managerName}}
                                 </option>
                               </select>
-                              <div *ngIf="f.submitted && aId.errors" class="text-danger">
-                                <span style="font-size:.875em;" *ngIf="aId.errors['required']">apply to is required</span>
+                              <div *ngIf="f.submitted && ManagerId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="ManagerId.errors['required']">apply to is required</span>
                   
                               </div>
                         </div>
                         <div class="form-group">
                             <label>contact<span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" [(ngModel)]="leave.contact" name="contact"
-                                #contact="ngModel" required>
-                                <div *ngIf="f.submitted && contact.errors" class="text-danger">
-                                    <span style="font-size:.875em;" *ngIf="contact.errors['required']">contact is required</span>
+                            <input type="number" class="form-control" [(ngModel)]="leave.Contact" name="Contact"
+                                #Contact="ngModel" required>
+                                <div *ngIf="f.submitted && Contact.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="Contact.errors['required']">contact is required</span>
                       
                                   </div>
                         </div>
                         <div class="form-group">
                             <label>Reason<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" [(ngModel)]="leave.reason" name="reason"
-                                #reason="ngModel" required>
-                                <div *ngIf="f.submitted && reason.errors" class="text-danger">
-                                    <span style="font-size:.875em;" *ngIf="reason.errors['required']">reason is required</span>
+                            <input type="text" class="form-control" [(ngModel)]="leave.Reason" name="Reason"
+                                #Reason="ngModel" required>
+                                <div *ngIf="f.submitted && Reason.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="Reason.errors['required']">reason is required</span>
                       
                                   </div>
                         </div>
-                        <div  class="form-group">
+                        <!-- <div  class="form-group">
                             <label>EmpId<span class="text-danger">*</span></label>
-                            <select  name="empId" [(ngModel)]="leave.empId" #empId="ngModel" class="form-control">
+                            <select  name="EmpId" [(ngModel)]="leave.EmpId" #EmpId="ngModel" class="form-control">
                                 <option value="undefined">Please select value</option>
-                                <option *ngFor="let employee of employees" [ngValue]="employee.empId">
+                                <option *ngFor="let employee of employees" [ngValue]="employee.EmpId">
                                   {{employee.empId}}
                                 </option>
                               </select>
                             
-                        </div>
+                        </div> -->
                         
                         <button type="submit" class="btn btn-primary" >Submit</button>
                         

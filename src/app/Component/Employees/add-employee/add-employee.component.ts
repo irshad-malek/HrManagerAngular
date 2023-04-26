@@ -57,10 +57,7 @@ export class AddEmployeeComponent implements OnInit {
     if (form.invalid) {
       return
     } else {
-
       this.addEmployee();
-
-
     }
   }
   onReset(form: NgForm): void {

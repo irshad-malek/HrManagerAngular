@@ -11,5 +11,5 @@ export class Employee{
     EmpTypeId:number;
     DesgId:number;
     EmployeeRoleId:number;
-    CId:number;
+    CompanyId:number;
 }

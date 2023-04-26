@@ -16,7 +16,7 @@
                     <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f)">
                         <div class="form-group">
                             <label>Employee Name<span class="text-danger">*</span></label>
-                            <select required name="Department" #EmpId="ngModel" class="form-control" [(ngModel)]="empSalary.EmpId">
+                            <select required name="EmpId" #EmpId="ngModel" class="form-control" [(ngModel)]="empSalary.EmpId">
                               <option value="undefined">Please select Value</option>
                               <option *ngFor="let employee of Employees" [ngValue]="employee.empId">
                                 {{employee.firstName}}

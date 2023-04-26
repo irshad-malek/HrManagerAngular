@@ -6,6 +6,7 @@ import { Employee } from 'src/app/Models/employee';
 import { DetailsEmployeeComponent } from '../details-employee/details-employee.component';
 import { DeleteEmployeeComponent } from '../delete-employee/delete-employee.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
+import { NavbarService } from 'src/app/Services/navbar.service';
 
 @Component({
   selector: 'app-employee',
@@ -14,9 +15,10 @@ import { EditEmployeeComponent } from '../edit-employee/edit-employee.component'
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private employeeService:ServicesService,public modalService: NgbModal) { }
+  constructor(private employeeService:ServicesService,public modalService: NgbModal,public nav:NavbarService) { }
   employees:any;
   ngOnInit(): void {
+    this.nav.show();
     this.employeeService.employeeList().subscribe(
       data => this.employees = data
     )
@@ -33,9 +35,6 @@ export class EmployeeComponent implements OnInit {
      }).catch((res) => {});
   }
   openModal() {
-    
-    
-    
 
     this.modalService.open(AddEmployeeComponent).result.then((confirm)=>{
        if(confirm==true)

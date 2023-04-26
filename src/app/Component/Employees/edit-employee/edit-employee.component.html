@@ -74,7 +74,7 @@
             </div>
             <div class="form-group">
               <label>DepartmentName<span class="text-danger">*</span></label>
-              <select required name="Department" #DeptId="ngModel" class="form-control" [(ngModel)]="emp.DeptId">
+              <select required name="Department" #DeptId="ngModel" class="form-control"  [(ngModel)]="emp.DeptId">
                 <option value="undefined">Please select Value</option>
                 <option *ngFor="let dept of deptdropdownList" [ngValue]="dept.deptId">
                   {{dept.deptName}}
@@ -99,7 +99,7 @@
             </div>
             <div class="form-group">
               <label>Designation<span class="text-danger">*</span></label>
-              <select required name="desg" [(ngModel)]="emp.DesgId" #DesgId="ngModel" class="form-control">
+              <select required name="DesgId" [(ngModel)]="emp.DesgId" #DesgId="ngModel" class="form-control">
                 <option value="undefined">Please select value</option>
                 <option *ngFor="let desig of designationList" [ngValue]="desig.desgId">
                   {{desig.desName}}
@@ -124,14 +124,14 @@
             </div>
             <div class="form-group">
               <label>Company<span class="text-danger">*</span></label>
-              <select required name="CIds" [(ngModel)]="emp.CId" #CId="ngModel" class="form-control">
+              <select required name="Comp" [(ngModel)]="emp.CompanyId" #CompanyId="ngModel" class="form-control">
                 <option value="undefined">Please select value</option>
-                <option *ngFor="let company of companyList" [ngValue]="company.cId">
+                <option *ngFor="let company of companyList" [ngValue]="company.companyId">
                   {{company.name}}
                 </option>
               </select>
-              <div *ngIf="f.submitted && CId.errors" class="text-danger">
-                <span style="font-size:.875em;" *ngIf="CId.errors['required']">companyName is required</span>
+              <div *ngIf="f.submitted && CompanyId.errors" class="text-danger">
+                <span style="font-size:.875em;" *ngIf="CompanyId.errors['required']">companyName is required</span>
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

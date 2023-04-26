@@ -3,7 +3,7 @@ export class employeeSalary{
     HouseRent:number;
     Medical:number;
     GrossSalary:number;
-    Taxes:number;
+    taxAmount:number;
     EmpId:number;
     isActive:boolean=true;
 }

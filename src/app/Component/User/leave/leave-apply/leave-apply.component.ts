@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { leaveApply } from 'src/app/Models/leaveApply';
+import { NavbarService } from 'src/app/Services/navbar.service';
 import { ServicesService } from 'src/app/Services/services.service';
 
 @Component({
@@ -14,26 +15,29 @@ export class LeaveApplyComponent {
   sessions;
   employees;
   leaveApproves;
-  constructor(private service:ServicesService,private toastr:ToastrService){
+  constructor(private service:ServicesService,private toastr:ToastrService,public nav:NavbarService){
     
   }
   ngOnInit(): void {
+    this.nav.show();
   this.service.getLeaveType().subscribe(res=>{
-    this.leaveTypes=res
+    this.leaveTypes=res.data
   })
   this.service.getSession().subscribe(res=>{
-    this.sessions=res
+    this.sessions=res.data
   })
   this.service.getEmployee().subscribe(res=>{
-    this.employees=res
+    this.employees=res.data
   })
   this.service.getLeaveApproved().subscribe(res=>{
-    this.leaveApproves=res
+    this.leaveApproves=res.data
+    console.log(this.leaveApproves)
   })
   }
 
   LeaveSubmit(){
-    this.service.leaveSubmit(this.leave).subscribe(res=>{
+   let emailId=localStorage.getItem("emailId")
+    this.service.leaveSubmit(this.leave,emailId).subscribe(res=>{
       this.toastr.success('', 'Record inserted', {timeOut: 3000})
     })
   }

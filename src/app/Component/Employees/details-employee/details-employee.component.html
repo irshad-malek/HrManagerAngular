@@ -93,9 +93,9 @@
             </div>
             <div class="form-group">
               <label>Company<span class="text-danger">*</span></label>
-              <select disabled required name="CIds" [(ngModel)]="emp.CId" #CId="ngModel" class="form-control">
+              <select disabled required name="CompanyId" [(ngModel)]="emp.CompanyId" #CompanyId="ngModel" class="form-control">
                 <option value="undefined">Please select value</option>
-                <option *ngFor="let company of companyList" [ngValue]="company.cId">
+                <option *ngFor="let company of companyList" [ngValue]="company.companyId">
                   {{company.name}}
                 </option>
               </select>

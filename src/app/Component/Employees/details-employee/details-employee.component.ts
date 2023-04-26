@@ -33,7 +33,7 @@ export class DetailsEmployeeComponent {
       this.emp.EmpTypeId = res.empTypeId
       this.emp.EmployeeRoleId = res.employeeRoleId
       this.emp.DesgId = res.desgId
-      this.emp.CId = res.cId
+      this.emp.CompanyId = res.companyId
       // this.emp=res
     })
   }

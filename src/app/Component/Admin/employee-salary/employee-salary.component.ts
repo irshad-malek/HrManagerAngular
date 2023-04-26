@@ -20,7 +20,7 @@ constructor(private service:ServicesService,public nav:NavbarService,private _Ng
 ngOnInit(): void {
   this.nav.show();
    this.service.getEmployee().subscribe(res=>{
-    this.Employees=res;
+    this.Employees=res.data;
   })
 }
 onSubmit(form:NgForm){
