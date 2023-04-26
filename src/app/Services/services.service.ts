@@ -99,12 +99,12 @@ export class ServicesService {
   getLeaveRequest(){
     return this.http.get(this.url+"api/ApprovedLeave/getLeaveRequest");
   }
-  getEmployeeSalary(){
-    return this.http.get(this.url+"api/Salary/salaryListOfEmp");
+  getEmployeeSalary():Observable<any>{
+    return this.http.get<any>(this.url+"api/Salary/salaryListOfEmp");
   }
   
-  getEmpSalary(sId){
-    return this.http.get(this.url+"api/Salary/getEmpSalary"+sId)
+  getEmpSalary(sId):Observable<any>{
+    return this.http.get<any>(this.url+"api/Salary/getEmpSalary"+sId)
   }
 
   deleteEmpSalary(sId){

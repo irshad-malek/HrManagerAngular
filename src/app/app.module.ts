@@ -26,7 +26,6 @@ import { EmployeeSalaryListComponent } from './Component/Admin/employee-salary-l
 import { UpdateEmpSalaryComponent } from './Component/Admin/update-emp-salary/update-emp-salary.component';
 import { DetailsEmpSalaryComponent } from './Component/Admin/details-emp-salary/details-emp-salary.component';
 import { DeleteEmpSalaryComponent } from './Component/Admin/delete-emp-salary/delete-emp-salary.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,8 +45,7 @@ import { DeleteEmpSalaryComponent } from './Component/Admin/delete-emp-salary/de
     EmployeeSalaryListComponent,
     UpdateEmpSalaryComponent,
     DetailsEmpSalaryComponent,
-    DeleteEmpSalaryComponent,
-  
+    DeleteEmpSalaryComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +59,6 @@ import { DeleteEmpSalaryComponent } from './Component/Admin/delete-emp-salary/de
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ AddEmployeeComponent,DetailsEmployeeComponent,DeleteEmployeeComponent,EditEmployeeComponent,EmployeeSalaryComponent,UpdateEmpSalaryComponent]
+  entryComponents: [ AddEmployeeComponent,DetailsEmployeeComponent,DeleteEmployeeComponent,EditEmployeeComponent]
 })
 export class AppModule { }
