@@ -18,7 +18,6 @@ export class ManagerComponent {
   employeesMgrs;
   departments;
   constructor(private service:ServicesService,private Nav:NavbarService,private toastr:ToastrService,private router:Router){
-
   }
 
   ngOnInit(){

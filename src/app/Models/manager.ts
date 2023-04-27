@@ -6,4 +6,5 @@ export class manager{
     IsActive:boolean=true;
     EmpId:number;
     EmpIdMgr:number;
+    
 }

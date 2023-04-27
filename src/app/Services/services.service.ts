@@ -145,4 +145,5 @@ export class ServicesService {
   getManager():Observable<any>{
     return this.http.get<any>(this.url+"api/Manager/getAllManager");
   }
+  
 }

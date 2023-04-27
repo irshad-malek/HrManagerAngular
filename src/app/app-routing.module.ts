@@ -10,7 +10,7 @@ import { LoginComponent } from './Component/login/login.component';
 import { EmployeeSalaryListComponent } from './Component/Admin/employee-salary-list/employee-salary-list.component';
 import { AttendanceComponent } from './Component/Admin/attendance/attendance.component';
 import { ManagerComponent } from './Component/Admin/manager/manager.component';
-import { ManagerListComponent } from './Component/manager-list/manager-list.component';
+import { ManagerListComponent } from './Component/Admin/manager-list/manager-list.component';
 
 const routes: Routes = [{
   path: '', component: LoginComponent,

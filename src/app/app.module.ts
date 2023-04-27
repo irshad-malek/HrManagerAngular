@@ -28,9 +28,10 @@ import { DetailsEmpSalaryComponent } from './Component/Admin/details-emp-salary/
 import { DeleteEmpSalaryComponent } from './Component/Admin/delete-emp-salary/delete-emp-salary.component';
 import { LoginInterceptor } from './Interceptors/login.interceptor';
 import { ManagerComponent } from './Component/Admin/manager/manager.component';
-import { ManagerListComponent } from './Component/manager-list/manager-list.component';
+import { ManagerListComponent } from './Component/Admin/manager-list/manager-list.component';
 import { AttendanceComponent } from './Component/Admin/attendance/attendance.component';
 @NgModule({
+
   declarations: [
     AppComponent,
     EmployeeComponent,

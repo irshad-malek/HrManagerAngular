@@ -10,7 +10,6 @@ import { ServicesService } from 'src/app/Services/services.service';
 export class AttendanceComponent {
 constructor(private service:ServicesService,public nav:NavbarService)
 {
-
 }
 attendanceLists;
 ngOnInit(){
