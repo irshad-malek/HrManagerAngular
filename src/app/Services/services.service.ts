@@ -6,6 +6,7 @@ import { leaveApply } from '../Models/leaveApply';
 import { employeeSalary } from '../Models/employeeSalary';
 import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { login } from '../Models/login';
+import { manager } from '../Models/manager';
 
 @Injectable({
   providedIn: 'root'
@@ -57,8 +58,8 @@ export class ServicesService {
   getDesignation(){
     return this.http.get(this.url+"api/Designation/getDesignation")
   }
-  getEmployeeRole(){
-    return this.http.get(this.url+"api/EmployeeRoles/getEmployeeRoles")
+  getEmployeeRole():Observable<any>{
+    return this.http.get<any>(this.url+"api/EmployeeRoles/getEmployeeRoles")
   }
   updateEmployee(id,emp){
     return this.http.put(this.url+"api/Employee/updateEmployee/"+id,emp)
@@ -133,5 +134,15 @@ export class ServicesService {
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('access_token');
+  }
+  getAllAttendance(){
+    return this.http.get<any>(this.url+"api/Attendance/getAllAttendanceDetails");
+  }
+
+  addEmployeeManager(manager:manager):Observable<manager>{
+    return this.http.post<manager>(this.url+"api/Manager/saveManager",manager);
+  }
+  getManager():Observable<any>{
+    return this.http.get<any>(this.url+"api/Manager/getAllManager");
   }
 }

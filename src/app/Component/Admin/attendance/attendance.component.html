@@ -1,0 +1,48 @@
+<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
+<div style="margin-top: 100px;" class="container">
+    <div class="row">
+        <div class="col-12 mb-3 mb-lg-5">
+            <div class="position-relative card table-nowrap table-card">
+                <!-- <div class="card-header align-items-center">
+                    <h5 class="mb-0">Latest Transactions</h5>
+                    <p class="mb-0 small text-muted">1 Pending</p>
+                </div> -->
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead class="small text-uppercase bg-body text-muted">
+                            <tr>
+                                <!-- <th></th> -->
+                                <th>Intime</th>
+                                <th>OutTime</th>
+                                <th>EmpName</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="align-middle" *ngFor="let attendanceList of attendanceLists">
+                                <td>
+                                {{attendanceList.inTime}}
+                                </td>
+                                <td>{{attendanceList.outTime}}</td>
+                                <td>{{attendanceList.name}}</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+                                        <span>{{attendanceList.status}}</span>
+                                    </div>
+                                </td>
+                                <!-- <td>
+                                    <span class="badge fs-6 fw-normal bg-tint-success text-success">Completed</span>
+                                </td> -->
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div class="card-footer text-end">
+                    <a href="#!" class="btn btn-gray">View All Transactions</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
