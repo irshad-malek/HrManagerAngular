@@ -1,0 +1,93 @@
+<div>
+
+    <div class="container ">
+
+        <div class=" row justify-content-center">
+            <div class="col-md-6 text-left bg-white rounded shadow py-3">
+                <div>
+                    <div  class="card-header">
+                        <h3>AddManager</h3>
+                    </div>
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit(f)">
+                      <div  class="form-group">
+                        <label>departments<span class="text-danger">*</span></label>
+                        <select required  name="Dept" [(ngModel)]="manager.DeptId" #DeptId="ngModel" class="form-control">
+                            <option value=0>Please select value</option>
+                            <option *ngFor="let department of departments" [ngValue]="department.deptId">
+                              {{department.deptName}}
+                            </option>
+                          </select>
+                          <div *ngIf="f.submitted && DeptId.errors" class="text-danger">
+                            <span style="font-size:.875em;" *ngIf="DeptId.errors['required']">department is required</span>               
+                          </div>
+                    </div>
+                        <div class="form-group">
+                            <label>Employee Role<span class="text-danger">*</span></label>
+                            <select required name="EmployeeRoleId" [(ngModel)]="manager.EmployeeRoleId" #EmployeeRoleId="ngModel" class="form-control">
+                                <option value=0>Please select value</option>
+                                <option *ngFor="let empRole of empRoles" [ngValue]="empRole.employeeRoleId">
+                                  {{empRole.employeeRoleName}}
+                                </option>
+                              </select>
+                              <div *ngIf="f.submitted && EmployeeRoleId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="EmployeeRoleId.errors['required']">EmployeeRole is required</span>
+                  
+                              </div>
+                        </div>
+                        <div class="form-group">
+                            <label>EffectiveFromDate<span class="text-danger">*</span></label>
+                            <input type="datetime-local" class="form-control" [(ngModel)]="manager.EffectiveFromDate" name="EffectiveFromDate"
+                                #EffectiveFromDate="ngModel" required>
+                                <div *ngIf="f.submitted && EffectiveFromDate.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="EffectiveFromDate.errors['required']">EffectiveFromDate is required</span>
+                      
+                                  </div>
+                        </div>
+                        <div class="form-group">
+                            <label>EffectiveToDate<span class="text-danger">*</span></label>
+                            <input type="datetime-local" class="form-control" [(ngModel)]="manager.EffectiveToDate" name="EffectiveToDate"
+                                #EffectiveToDate="ngModel" required>
+                                <div *ngIf="f.submitted && EffectiveToDate.errors" class="text-danger">
+                                    <span style="font-size:.875em;" *ngIf="EffectiveToDate.errors['required']">EffectiveToDate is required</span>
+                      
+                                  </div>
+                        </div>
+                        <div class="form-group">
+                            <label>JuniourEmployee<span class="text-danger">*</span></label>
+                            <select required name="EmpId" [(ngModel)]="manager.EmpId" #EmpId="ngModel" class="form-control">
+                                <option value="undefined">Please select value</option>
+                                <option *ngFor="let employee of employees" [ngValue]="employee.empId">
+                                  {{employee.firstName}}
+                                </option>
+                              </select>
+                              <div *ngIf="f.submitted && EmpId.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="EmpId.errors['required']">Employee is required</span>
+                  
+                              </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <label>SeniorEmployee<span class="text-danger">*</span></label>
+                            <select required name="EmpIdMgr" [(ngModel)]="manager.EmpIdMgr" #EmpIdMgr="ngModel" class="form-control">
+                                <option value=0>Please select value</option>
+                                <option *ngFor="let employeesMgr of employeesMgrs" [ngValue]="employeesMgr.empId">
+                                  {{employeesMgr.firstName}}
+                                </option>
+                              </select>
+                              <div *ngIf="f.submitted && EmpIdMgr.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="EmpIdMgr.errors['required']">Manager  is required</span>
+                  
+                              </div>
+                        </div>                 
+                        <button type="submit" class="btn btn-primary" >Submit</button>
+                        <button routerLink="/getAllManager" class="btn btn-danger">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

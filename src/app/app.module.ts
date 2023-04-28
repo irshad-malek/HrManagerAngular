@@ -30,6 +30,7 @@ import { LoginInterceptor } from './Interceptors/login.interceptor';
 import { ManagerComponent } from './Component/Admin/manager/manager.component';
 import { ManagerListComponent } from './Component/Admin/manager-list/manager-list.component';
 import { AttendanceComponent } from './Component/Admin/attendance/attendance.component';
+import { EditManagerComponent } from './Component/Admin/edit-manager/edit-manager.component';
 @NgModule({
 
   declarations: [
@@ -53,7 +54,8 @@ import { AttendanceComponent } from './Component/Admin/attendance/attendance.com
     DeleteEmpSalaryComponent,
     ManagerComponent,
     ManagerListComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    EditManagerComponent
   ],
   imports: [
     BrowserModule,
