@@ -8,6 +8,7 @@ import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { login } from '../Models/login';
 import { manager } from '../Models/manager';
 import { Attendance } from '../Models/Attendance';
+import { CreatePassword } from '../Models/createPassword';
 
 @Injectable({
   providedIn: 'root'
@@ -156,5 +157,8 @@ export class ServicesService {
 
   addAttendance(attendance:Attendance){
     return this.http.post(this.url+"api/Attendance/saveAttendance",attendance)
+  }
+  createPassword(createPassword:CreatePassword){
+    return this.http.post(this.url+"api/Account/createPassword",createPassword)
   }
 }

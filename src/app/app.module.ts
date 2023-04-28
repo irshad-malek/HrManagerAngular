@@ -33,6 +33,7 @@ import { AttendanceComponent } from './Component/Admin/attendance/attendance.com
 import { EditManagerComponent } from './Component/Admin/edit-manager/edit-manager.component';
 import { AttendanceAddComponent } from './Component/User/attendance-add/attendance-add.component';
 import { DatePipe } from '@angular/common';
+import { CreatePasswordComponent } from './Component/create-password/create-password.component';
 
 @NgModule({
 
@@ -59,7 +60,8 @@ import { DatePipe } from '@angular/common';
     ManagerListComponent,
     AttendanceComponent,
     EditManagerComponent,
-    AttendanceAddComponent
+    AttendanceAddComponent,
+    CreatePasswordComponent
   ],
   imports: [
     BrowserModule,
