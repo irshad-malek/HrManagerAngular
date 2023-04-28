@@ -12,9 +12,13 @@ import { AttendanceComponent } from './Component/Admin/attendance/attendance.com
 import { ManagerComponent } from './Component/Admin/manager/manager.component';
 import { ManagerListComponent } from './Component/Admin/manager-list/manager-list.component';
 import { EditManagerComponent } from './Component/Admin/edit-manager/edit-manager.component';
+import { AttendanceAddComponent } from './Component/User/attendance-add/attendance-add.component';
 
 const routes: Routes = [{
   path: '', component: LoginComponent,
+},
+{
+  path:'AttendanceSign',component:AttendanceAddComponent
 },
 {
   path:'leaveRequest',component:LeaveRequestComponent

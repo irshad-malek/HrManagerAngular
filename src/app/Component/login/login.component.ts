@@ -12,7 +12,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class LoginComponent {
 constructor(public nav: NavbarService,private authService: ServicesService,private router:Router){
-  
+  this.nav.hide();
 }
 logins=new login()
 onSubmit(form) {
@@ -27,7 +27,7 @@ onSubmit(form) {
   //   console.log(decodedToken)
     this.authService.login(this.logins).subscribe(
       () => {
-         this.router.navigate(['/manageEmployee']);
+         this.router.navigate(['/AttendanceSign']);
       }
     );
   }

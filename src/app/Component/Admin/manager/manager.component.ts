@@ -39,7 +39,7 @@ export class ManagerComponent {
   onSubmit(form:NgForm){
     this.service.addEmployeeManager(this.manager).subscribe(res=>{
       this.toastr.success('', 'Record inserted', {timeOut: 3000})
-      this.router.navigate['getAllManager']
+      this.router.navigate(['getAllManager'])
     })
   }
 }

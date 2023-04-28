@@ -7,6 +7,7 @@ import { employeeSalary } from '../Models/employeeSalary';
 import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { login } from '../Models/login';
 import { manager } from '../Models/manager';
+import { Attendance } from '../Models/Attendance';
 
 @Injectable({
   providedIn: 'root'
@@ -151,5 +152,9 @@ export class ServicesService {
  
   updateManager(id,manager:manager){
     return this.http.put(this.url+"api/Manager/updateManagers/"+id,manager)
+  }
+
+  addAttendance(attendance:Attendance){
+    return this.http.post(this.url+"api/Attendance/saveAttendance",attendance)
   }
 }
