@@ -24,6 +24,7 @@
                                 <th>Manager employee RoleName</th>
                                 <th>EffectiveFromDate</th>
                                 <th>EffectiveToDate</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,9 +42,10 @@
                                         <span>{{manager.effectiveToDate}}</span>
                                     </div>
                                 </td>
-                                <!-- <td>
-                                    <span class="badge fs-6 fw-normal bg-tint-success text-success">Completed</span>
-                                </td> -->
+                                <td>
+                                    <a  [routerLink]="['/editManager/',manager.managerId]" class="btn btn-primary"><i class="bi bi-pencil-square"></i>
+                                    </a>
+                                </td>
                             </tr>
 
                         </tbody>

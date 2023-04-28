@@ -11,6 +11,7 @@ import { EmployeeSalaryListComponent } from './Component/Admin/employee-salary-l
 import { AttendanceComponent } from './Component/Admin/attendance/attendance.component';
 import { ManagerComponent } from './Component/Admin/manager/manager.component';
 import { ManagerListComponent } from './Component/Admin/manager-list/manager-list.component';
+import { EditManagerComponent } from './Component/Admin/edit-manager/edit-manager.component';
 
 const routes: Routes = [{
   path: '', component: LoginComponent,
@@ -47,6 +48,9 @@ const routes: Routes = [{
 },{
   path:'getAllManager',component:ManagerListComponent
 
+},
+{
+  path:'editManager/:manager.managerId',component:EditManagerComponent
 }]
 
 @NgModule({
