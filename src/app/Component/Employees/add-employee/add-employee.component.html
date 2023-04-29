@@ -54,10 +54,11 @@
           </div>
           <div class="form-group">
             <label>EmailId<span class="text-danger">*</span></label>
-            <input type="email" class="form-control" [(ngModel)]="emp.EmailId" name="email_Id" #email_Id="ngModel"
+            <input type="email" class="form-control" appEmployeeEmailExist [(ngModel)]="emp.EmailId" name="email_Id" #email_Id="ngModel"
               required>
             <div *ngIf="f.submitted && email_Id.errors" class="text-danger">
               <span style="font-size:.875em;" *ngIf="email_Id.errors['required']">email_Id is required</span>
+              <span style="font-size:.875em;" *ngIf="email_Id.errors['Emails']">Email is already taken</span>
 
             </div>
 
