@@ -13,6 +13,7 @@ import { ManagerComponent } from './Component/Admin/manager/manager.component';
 import { ManagerListComponent } from './Component/Admin/manager-list/manager-list.component';
 import { EditManagerComponent } from './Component/Admin/edit-manager/edit-manager.component';
 import { AttendanceAddComponent } from './Component/User/attendance-add/attendance-add.component';
+import { CreatePasswordComponent } from './Component/create-password/create-password.component';
 
 const routes: Routes = [{
   path: '', component: LoginComponent,
@@ -20,6 +21,7 @@ const routes: Routes = [{
 {
   path:'AttendanceSign',component:AttendanceAddComponent
 },
+{path:'createPassword',component:CreatePasswordComponent},
 {
   path:'leaveRequest',component:LeaveRequestComponent
 },
