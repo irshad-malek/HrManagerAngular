@@ -161,4 +161,7 @@ export class ServicesService {
   createPassword(createPassword:CreatePassword){
     return this.http.post(this.url+"api/Account/createPassword",createPassword)
   }
+  employeeEmailExist(emailId){
+    return this.http.get(this.url+"api/Employee/EmployeeemailExist/"+emailId);
+  }
 }
