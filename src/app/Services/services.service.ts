@@ -103,7 +103,7 @@ export class ServicesService {
     return this.http.post<employeeSalary>(this.url+"api/Salary/AddSalaryDetails",empSalary)
   }
   getLeaveRequest(){
-    return this.http.get(this.url+"api/ApprovedLeave/getLeaveRequest");
+    return this.http.get(this.url+"api/Manager/LeaveApproved/"+localStorage.getItem('emailId'));
   }
   getEmployeeSalary():Observable<any>{
     return this.http.get<any>(this.url+"api/Salary/salaryListOfEmp");
