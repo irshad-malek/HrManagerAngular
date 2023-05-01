@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { NavbarService } from 'src/app/Services/navbar.service';
+import { ServicesService } from 'src/app/Services/services.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +10,11 @@ import { NavbarService } from 'src/app/Services/navbar.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public nav:NavbarService) { }
-  
-  ngOnInit(): void {
-  }
+  constructor(public nav:NavbarService,public service:ServicesService) {
+    
+   }
 
+  ngOnInit(): void {
+    
+  }
 }

@@ -14,9 +14,12 @@ import { CreatePassword } from '../Models/createPassword';
   providedIn: 'root'
 })
 export class ServicesService {
+  leaveApply=new leaveApply()
   url="https://localhost:7085/"
+  
   constructor(private http: HttpClient) { }
   salaryDetails=new employeeSalary();
+  isLoggedIns:boolean;
   private empId: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   private sId:BehaviorSubject<any> = new BehaviorSubject<any>(null);
   getEmployeeById(empId: Employee) {
@@ -26,6 +29,8 @@ export class ServicesService {
   getEmpSalaryById(sId:employeeSalary){
     this.sId.next(sId);
   }
+  
+ 
   getEmpSalaryMethod(){
     return this.sId.asObservable();
   }
@@ -149,7 +154,7 @@ export class ServicesService {
   }
   getManagerById(id):Observable<any>{
     return this.http.get<any>(this.url+"api/Manager/getManagerById/"+id);
-  }
+  }""
  
   updateManager(id,manager:manager){
     return this.http.put(this.url+"api/Manager/updateManagers/"+id,manager)
@@ -163,5 +168,22 @@ export class ServicesService {
   }
   employeeEmailExist(emailId){
     return this.http.get(this.url+"api/Employee/EmployeeemailExist/"+emailId);
+  }
+  leaveApprovedByManager(){
+    return this.http.get(this.url+"api/Manager/LeaveApprovedByManager/"+localStorage.getItem('emailId'));
+  }
+  leaveApprovedSave(leaveId):Observable<any>{
+    debugger
+    this.leaveApply.IsAccepted=true;
+    return this.http.put(this.url+"api/Manager/LeaveApprovedSave/"+leaveId,this.leaveApply)
+  }
+  leaveWithdraw(leaveId)
+  {
+    this.leaveApply.IsApply=false;
+    return this.http.put(this.url+"api/leaveApply/leaveWithdraw/"+leaveId,this.leaveApply)
+  }
+  getEmployeeType():Observable<boolean>{
+    return this.http.get<boolean>(this.url+"api/Employee/getEmployeeType/"+localStorage.getItem("emailId"))
+    
   }
 }
