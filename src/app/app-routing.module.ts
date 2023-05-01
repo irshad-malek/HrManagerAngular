@@ -14,9 +14,13 @@ import { ManagerListComponent } from './Component/Admin/manager-list/manager-lis
 import { EditManagerComponent } from './Component/Admin/edit-manager/edit-manager.component';
 import { AttendanceAddComponent } from './Component/User/attendance-add/attendance-add.component';
 import { CreatePasswordComponent } from './Component/create-password/create-password.component';
+import { LeaveApprovedManagerComponent } from './Component/Admin/leave-approved-manager/leave-approved-manager.component';
 
 const routes: Routes = [{
   path: '', component: LoginComponent,
+},
+{
+path:'LeaveApprovedByManager',component:LeaveApprovedManagerComponent
 },
 {
   path:'AttendanceSign',component:AttendanceAddComponent

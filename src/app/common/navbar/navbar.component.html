@@ -2,17 +2,17 @@
   
  
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" roterLink="#">Admin</a>
+    <a *ngIf="service.isLoggedIns" class="navbar-brand" roterLink="#">Admin</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li  class="nav-item">
           <a class="nav-link" routerLink="AttendanceSign">AttendanceSign</a>
         </li>
-        <li class="nav-item active">
+        <li *ngIf="service.isLoggedIns" class="nav-item active">
           <a class="nav-link" routerLink="manageEmployee">manageEmployee</a>
         </li>
         <li class="nav-item">
@@ -31,19 +31,25 @@
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="addEmpSalary">EmployeeSalary</a>
         </li> -->
-        <li class="nav-item">
+        <li *ngIf="service.isLoggedIns" class="nav-item">
           <a class="nav-link" routerLink="EmpSalaryList">EmployeeSalaryList</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="service.isLoggedIns" class="nav-item">
           <a class="nav-link" routerLink="EmpAttendanceList">Attendance</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" routerLink="AddManager">Manager</a>
         </li> -->
-        <li class="nav-item">
+        <li *ngIf="service.isLoggedIns" class="nav-item">
           <a class="nav-link" routerLink="getAllManager">Managers</a>
         </li>
-       
+        <li *ngIf="service.isLoggedIns" class="nav-item">
+          <a class="nav-link" routerLink="LeaveApprovedByManager">LeaveApprovedByManager</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="leaveRequest">leaveRequest</a>
+        </li>
       </ul>
 
       

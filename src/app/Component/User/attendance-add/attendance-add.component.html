@@ -5,7 +5,9 @@
     <div class="card-body">
       <h5 class="card-title">Attendance Sign in sign Out</h5>
       <p class="card-text">You can Sign in first</p>
-      <a (click)="flag?SignOut():SignIn()" class="btn btn-primary">{{flag?'SignOut':'SignIn'}}</a>
+      <button  (click)="SignIn()" class="btn btn-primary" [disabled]="disabled">SignIn</button>
+      &nbsp;
+      <a (click)="SignOut()" class="btn btn-primary">SignOut</a>
 
     </div>
   </div>

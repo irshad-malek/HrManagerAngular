@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { NavbarService } from 'src/app/Services/navbar.service';
 import { ServicesService } from 'src/app/Services/services.service';
 
@@ -9,7 +10,7 @@ import { ServicesService } from 'src/app/Services/services.service';
 })
 export class LeaveRequestComponent {
   leaveRequests;
-  constructor(private service:ServicesService,public nav:NavbarService){
+  constructor(private service:ServicesService,public nav:NavbarService,private toastr:ToastrService){
 
   }
   ngOnInit(){
@@ -17,6 +18,15 @@ export class LeaveRequestComponent {
     return this.service.getLeaveRequest().subscribe(res=>{
       this.leaveRequests=res;
       console.log(this.leaveRequests)
+    })
+  }
+  Leavewithdraw(leaveId){
+    debugger
+    return this.service.leaveWithdraw(leaveId).subscribe(res=>{
+      this.toastr.success('', 'Leave withdraw successfully', {timeOut: 3000})
+      return this.service.getLeaveRequest().subscribe(res=>{
+        this.leaveRequests=res;
+      })
     })
   }
 }

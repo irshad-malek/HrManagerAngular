@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-constructor(public nav: NavbarService,private authService: ServicesService,private router:Router,private toastr:ToastrService){
+constructor(public nav: NavbarService,private service:ServicesService,private authService: ServicesService,private router:Router,private toastr:ToastrService){
   this.nav.hide();
 }
 showErrorMessage:boolean=false
@@ -22,7 +22,16 @@ onSubmit(form) {
   if (form.invalid) {
     return
   }else{
-  localStorage.setItem('emailId',this.logins.EmailId)
+    localStorage.setItem('emailId',this.logins.EmailId)
+   
+    this.service.getEmployeeType().subscribe((response: boolean)=>{
+      if(response){
+        this.service.isLoggedIns=true;
+      }
+      else{
+        this.service.isLoggedIns=false;
+      }
+    })
   // const helper = new JwtHelperService();
 
   // const decodedToken = helper.decodeToken(localStorage.getItem('access_token'));

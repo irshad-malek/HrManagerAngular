@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { leaveApply } from 'src/app/Models/leaveApply';
 import { NavbarService } from 'src/app/Services/navbar.service';
@@ -15,7 +16,7 @@ export class LeaveApplyComponent {
   sessions;
   employees;
   leaveApproves;
-  constructor(private service:ServicesService,private toastr:ToastrService,public nav:NavbarService){
+  constructor(private service:ServicesService,private toastr:ToastrService,public nav:NavbarService,private router:Router){
     
   }
   ngOnInit(): void {
@@ -39,6 +40,7 @@ export class LeaveApplyComponent {
    let emailId=localStorage.getItem("emailId")
     this.service.leaveSubmit(this.leave,emailId).subscribe(res=>{
       this.toastr.success('', 'Record inserted', {timeOut: 3000})
+      this.router.navigate(['/leaveRequest'])
     })
   }
   onSubmit(form): void {

@@ -35,6 +35,7 @@ import { AttendanceAddComponent } from './Component/User/attendance-add/attendan
 import { DatePipe } from '@angular/common';
 import { CreatePasswordComponent } from './Component/create-password/create-password.component';
 import { EmployeeEmailExistDirective } from './Directive/employee-email-exist.directive';
+import { LeaveApprovedManagerComponent } from './Component/Admin/leave-approved-manager/leave-approved-manager.component';
 
 @NgModule({
 
@@ -63,7 +64,8 @@ import { EmployeeEmailExistDirective } from './Directive/employee-email-exist.di
     EditManagerComponent,
     AttendanceAddComponent,
     CreatePasswordComponent,
-    EmployeeEmailExistDirective
+    EmployeeEmailExistDirective,
+    LeaveApprovedManagerComponent
   ],
   imports: [
     BrowserModule,
