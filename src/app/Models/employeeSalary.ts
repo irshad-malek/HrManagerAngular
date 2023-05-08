@@ -5,5 +5,7 @@ export class employeeSalary{
     GrossSalary:number;
     taxAmount:number;
     EmpId:number;
+    FromDate:Date;
+    ToDate:Date;
     isActive:boolean=true;
 }

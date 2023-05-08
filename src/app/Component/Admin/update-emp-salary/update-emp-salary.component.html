@@ -17,7 +17,7 @@
                           <div class="form-group">
                               <label>Employee Name<span class="text-danger">*</span></label>
                               <select required name="Department" #EmpId="ngModel" class="form-control" [(ngModel)]="empSalary.EmpId">
-                                <option value="undefined">Please select Value</option>
+                                <option [ngValue]="undefined">Please select Value</option>
                                 <option *ngFor="let employee of Employees" [ngValue]="employee.empId">
                                   {{employee.firstName}}
                                 </option>
@@ -26,6 +26,24 @@
                                 <span style="font-size:.875em;" *ngIf="EmpId.errors['required']">Name is required</span>
                   
                               </div>                        
+                            </div>
+                            <div class="form-group">
+                              <label>FromDate<span class="text-danger">*</span></label>
+                              <input type="datetime-local" class="form-control" [(ngModel)]="empSalary.FromDate" name="fromDate"
+                                #FromDate="ngModel" required>
+                              <div *ngIf="f.submitted && FromDate.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="FromDate.errors['required']">FromDate is required</span>
+                
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>ToDate<span class="text-danger">*</span></label>
+                              <input type="datetime-local" class="form-control" [(ngModel)]="empSalary.ToDate" name="toDate"
+                                #ToDate="ngModel" required>
+                              <div *ngIf="f.submitted && ToDate.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="ToDate.errors['required']">ToDate is required</span>
+                
+                              </div>
                             </div>
                           <div class="form-group">
                               <label>basic Salary<span class="text-danger">*</span></label>

@@ -36,6 +36,12 @@ import { DatePipe } from '@angular/common';
 import { CreatePasswordComponent } from './Component/create-password/create-password.component';
 import { EmployeeEmailExistDirective } from './Directive/employee-email-exist.directive';
 import { LeaveApprovedManagerComponent } from './Component/Admin/leave-approved-manager/leave-approved-manager.component';
+import { ProfilesComponent } from './Component/profiles/profiles.component';
+import { LeaveHistoryComponent } from './Component/User/leave-history/leave-history.component';
+import { EmailCheckDirective } from './Directive/email-check.directive';
+import { ManagerApprovedleavehistoryComponent } from './Component/Admin/manager-approvedleavehistory/manager-approvedleavehistory.component';
+import { SpecificempsalaryComponent } from './Component/User/specificempsalary/specificempsalary.component';
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
 
@@ -65,7 +71,12 @@ import { LeaveApprovedManagerComponent } from './Component/Admin/leave-approved-
     AttendanceAddComponent,
     CreatePasswordComponent,
     EmployeeEmailExistDirective,
-    LeaveApprovedManagerComponent
+    LeaveApprovedManagerComponent,
+    ProfilesComponent,
+    LeaveHistoryComponent,
+    EmailCheckDirective,
+    ManagerApprovedleavehistoryComponent,
+    SpecificempsalaryComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +86,7 @@ import { LeaveApprovedManagerComponent } from './Component/Admin/leave-approved-
     BrowserAnimationsModule,    
     FormsModule,
     NgMultiSelectDropDownModule,
+    DataTablesModule,
     ToastrModule.forRoot()
   ],
   providers: [

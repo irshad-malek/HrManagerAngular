@@ -5,10 +5,11 @@ export class leaveApply{
     Contact:number;
     Reason:string;
     ManagerId:number;
-    EmpId:number=3007;
+    EmpId:number;
     IsApply:boolean;
     IsAccepted:boolean;
     SId:number;
+    IsRejected:boolean;
     // isApply:boolean;
     // isAccepted:boolean;
 

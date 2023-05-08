@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeComponent } from './Component/Employees/employee/employee.component';
 import { LeaveRequestComponent } from './Component/Admin/leave-request/leave-request.component';
@@ -15,12 +15,19 @@ import { EditManagerComponent } from './Component/Admin/edit-manager/edit-manage
 import { AttendanceAddComponent } from './Component/User/attendance-add/attendance-add.component';
 import { CreatePasswordComponent } from './Component/create-password/create-password.component';
 import { LeaveApprovedManagerComponent } from './Component/Admin/leave-approved-manager/leave-approved-manager.component';
+import { ProfilesComponent } from './Component/profiles/profiles.component';
+import { LeaveHistoryComponent } from './Component/User/leave-history/leave-history.component';
+import { ManagerApprovedleavehistoryComponent } from './Component/Admin/manager-approvedleavehistory/manager-approvedleavehistory.component';
+import { SpecificempsalaryComponent } from './Component/User/specificempsalary/specificempsalary.component';
 
 const routes: Routes = [{
   path: '', component: LoginComponent,
 },
 {
 path:'LeaveApprovedByManager',component:LeaveApprovedManagerComponent
+},
+{
+path:'profiles',component:ProfilesComponent
 },
 {
   path:'AttendanceSign',component:AttendanceAddComponent
@@ -60,8 +67,18 @@ path:'LeaveApprovedByManager',component:LeaveApprovedManagerComponent
 
 },
 {
+  path:'LeaveHistory',component:LeaveHistoryComponent
+},
+{
   path:'editManager/:manager.managerId',component:EditManagerComponent
-}]
+},
+{
+  path:'leaveHistoryManager',component:ManagerApprovedleavehistoryComponent
+},
+{
+  path:'specificEmployeeSalary',component:SpecificempsalaryComponent
+}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

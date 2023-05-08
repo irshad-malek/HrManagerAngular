@@ -13,7 +13,7 @@ import { UpdateEmpSalaryComponent } from '../update-emp-salary/update-emp-salary
   styleUrls: ['./employee-salary-list.component.scss']
 })
 export class EmployeeSalaryListComponent {
-  employeeSalory;
+  employeeSalary;
   headers: string[] = [];
   public objectKeys: any;
 
@@ -28,7 +28,7 @@ export class EmployeeSalaryListComponent {
   }
 empSalary(){
   this.service.getEmployeeSalary().subscribe(res=>{
-     this.employeeSalory=res.data
+     this.employeeSalary=res.data
     this.headers = Object.keys(res.data[0]);
     console.log(res.data)
   })
@@ -50,7 +50,7 @@ empSalary(){
       if(confirm==true)
       {
        this.service.getEmployeeSalary().subscribe(
-         res => this.employeeSalory = res.data
+         res => this.employeeSalary = res.data
        )}
      }).catch((res) => {});
   }
@@ -60,7 +60,7 @@ empSalary(){
       if(confirm==true)
       {
        this.service.getEmployeeSalary().subscribe(
-        res => this.employeeSalory = res.data
+        res => this.employeeSalary = res.data
        )}
      }).catch((res) => {});
   }
@@ -70,7 +70,7 @@ empSalary(){
       if(confirm==true)
       {
        this.service.getEmployeeSalary().subscribe(
-         res => this.employeeSalory = res.data
+         res => this.employeeSalary = res.data
        )}
      }).catch((res) => {});
   }

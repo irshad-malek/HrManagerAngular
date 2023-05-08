@@ -34,7 +34,9 @@ export class UpdateEmpSalaryComponent {
       this.empSalary.HouseRent=res.data.houseRent
       this.empSalary.Medical=res.data.medical
       this.empSalary.taxAmount=res.data.taxAmount
-      // console.log(res.data.basicsSalary)
+      this.empSalary.FromDate=res.data.fromDate
+      this.empSalary.ToDate=res.data.toDate
+       console.log(res.data)
     })
   }
   onSubmit(form):void{

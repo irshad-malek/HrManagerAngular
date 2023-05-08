@@ -14,8 +14,8 @@
             <p class="card-text">{{leaveRequest.leaveType}}</p>
           </div>
           <div class="d-flex flex-column">
-            <h5 class="card-title">Pending from:</h5>
-            <p class="card-text">{{leaveRequest.firstName}}</p>
+            <h5 class="card-title">ApprovedWith</h5>
+            <p class="card-text">{{leaveRequest.seniorEmpName}}</p>
           </div>
         </div>
         <div class="d-flex flex-column flex-wrap border-bottom pb-3 mb-3 p-2">
@@ -29,12 +29,14 @@
             <h5 class="card-title">Reason:</h5>
             <p class="card-text">{{leaveRequest.reason}}</p>
           </div>
+          
         </div>
-        <div class="p-2">
-          <a (click)="LeaveApproved(leaveRequest.leaveId)" class="btn btn-primary">Approved</a>
-          <a (click)="LeaveReject(leaveRequest.leaveId)" class="btn btn-danger">Rejected</a>
-
-        </div>
+        <div style="margin-bottom:13px;margin-left:10px">
+          <span *ngIf="leaveRequest.isAccepted==true" _ngcontent-xhh-c589=""
+              class="leave-workflow-card-header-item-status text-4 text-regular text-success">APPROVED</span>
+              <span *ngIf="leaveRequest.isRejected==true" _ngcontent-xhh-c589=""
+              class="leave-workflow-card-header-item-status text-4 text-regular text-danger">REjECTED</span>
       </div>
+        
     </div>
   </div>

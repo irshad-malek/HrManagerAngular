@@ -24,6 +24,7 @@ ngOnInit(): void {
   })
 }
 onSubmit(form:NgForm){
+  console.log(this.empSalary)
   this.service.addEmployeeSalary(this.empSalary).subscribe(res=>{
     this.toastr.success('', 'Record inserted', {timeOut: 3000})
     this.activeModal.close(true)

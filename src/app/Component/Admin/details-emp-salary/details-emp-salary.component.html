@@ -24,6 +24,24 @@
                               </select>   
                                                   
                             </div>
+                            <div class="form-group">
+                              <label>FromDate<span class="text-danger">*</span></label>
+                              <input disabled type="datetime-local" class="form-control" [(ngModel)]="empSalary.FromDate" name="fromDate"
+                                #FromDate="ngModel" required>
+                              <div *ngIf="f.submitted && FromDate.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="FromDate.errors['required']">FromDate is required</span>
+                
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>ToDate<span class="text-danger">*</span></label>
+                              <input disabled type="datetime-local" class="form-control" [(ngModel)]="empSalary.ToDate" name="toDate"
+                                #ToDate="ngModel" required>
+                              <div *ngIf="f.submitted && ToDate.errors" class="text-danger">
+                                <span style="font-size:.875em;" *ngIf="ToDate.errors['required']">ToDate is required</span>
+                
+                              </div>
+                            </div>
                           <div class="form-group">
                               <label>basic Salary<span class="text-danger">*</span></label>
                             

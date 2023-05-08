@@ -76,7 +76,7 @@
           <div class="form-group">
             <label>DepartmentName<span class="text-danger">*</span></label>
             <select required name="Department" #DeptId="ngModel" class="form-control" [(ngModel)]="emp.DeptId">
-              <option value="undefined">Please select Value</option>
+              <option [ngValue]="undefined">Please select Value</option>
               <option *ngFor="let dept of deptdropdownList" [ngValue]="dept.deptId">
                 {{dept.deptName}}
               </option>
@@ -88,7 +88,7 @@
           <div class="form-group">
             <label>EmpType<span class="text-danger">*</span></label>
             <select required name="EmpType" [(ngModel)]="emp.EmpTypeId" #EmpTypeId="ngModel" class="form-control">
-              <option value="undefined">Please select value</option>
+              <option [ngValue]="undefined">Please select value</option>
               <option *ngFor="let empl of empTypeList" [ngValue]="empl.empTypeId">
                 {{empl.employeeTypes}}
               </option>
@@ -101,7 +101,7 @@
           <div class="form-group">
             <label>Designation<span class="text-danger">*</span></label>
             <select required name="desg" [(ngModel)]="emp.DesgId" #DesgId="ngModel" class="form-control">
-              <option value="undefined">Please select value</option>
+              <option [ngValue]="undefined">Please select value</option>
               <option *ngFor="let desig of designationList" [ngValue]="desig.desgId">
                 {{desig.desName}}
               </option>
@@ -114,7 +114,7 @@
           <div class="form-group">
             <label>EmployeeRole<span class="text-danger">*</span></label>
             <select required name="empRole" [(ngModel)]="emp.EmployeeRoleId" #EmployeeRoleId="ngModel" class="form-control">
-              <option value="undefined">Please select value</option>
+              <option [ngValue]="undefined">Please select value</option>
               <option *ngFor="let empRoled of employeeRoleList" [ngValue]="empRoled.employeeRoleId">
                 {{empRoled.employeeRoleName}}
               </option>
@@ -126,7 +126,7 @@
           <div class="form-group">
             <label>Company<span class="text-danger">*</span></label>
             <select required name="Comp" [(ngModel)]="emp.CompanyId" #CompanyId="ngModel" class="form-control">
-              <option value="undefined">Please select value</option>
+              <option [ngValue]="undefined">Please select value</option>
               <option *ngFor="let company of companyList" [ngValue]="company.companyId">
                 {{company.name}}
               </option>

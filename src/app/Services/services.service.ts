@@ -175,6 +175,7 @@ export class ServicesService {
   leaveApprovedSave(leaveId):Observable<any>{
     debugger
     this.leaveApply.IsAccepted=true;
+    this.leaveApply.IsRejected=false;
     return this.http.put(this.url+"api/Manager/LeaveApprovedSave/"+leaveId,this.leaveApply)
   }
   leaveWithdraw(leaveId)
@@ -185,5 +186,24 @@ export class ServicesService {
   getEmployeeType():Observable<boolean>{
     return this.http.get<boolean>(this.url+"api/Employee/getEmployeeType/"+localStorage.getItem("emailId"))
     
+  }
+  getSpecificEmployee(emailId){
+    return this.http.get(this.url+"api/Employee/getSpecificEmployee/"+emailId);
+  }
+  getleaveHistory(){
+    return this.http.get(this.url+"api/leaveApply/leaveHistory/"+localStorage.getItem("emailId"))
+  }
+  leaveRejectByManager(leaveId){
+    // return this.http.post()
+    this.leaveApply.IsAccepted=false
+    this.leaveApply.IsRejected=true;
+    return this.http.put(this.url+"api/Manager/LeaveApprovedSave/"+leaveId,this.leaveApply)
+  }
+  LeaveHistoryManagers(){
+    return this.http.get(this.url+"api/Manager/LeaveHistoryManager/"+localStorage.getItem('emailId'))
+  }
+
+  getSpecificEmployeeSalary(){
+    return this.http.get(this.url+"api/Salary/getSpecificEmployeeSalary/"+localStorage.getItem('emailId'))
   }
 }

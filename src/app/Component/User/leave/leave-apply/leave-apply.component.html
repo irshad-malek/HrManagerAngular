@@ -13,7 +13,7 @@
                         <div class="form-group">
                             <label>Leave Type<span class="text-danger">*</span></label>
                             <select required name="LeaveTypeId" [(ngModel)]="leave.LeaveTypeId" #LeaveTypeId="ngModel" class="form-control">
-                                <option value="undefined">Please select value</option>
+                                <option [ngValue]="undefined">Please select value</option>
                                 <option *ngFor="let leaveType of leaveTypes" [ngValue]="leaveType.leaveTypeId">
                                   {{leaveType.leaveTypes}}
                                 </option>
@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label>Session<span class="text-danger">*</span></label>
                             <select required name="SId" [(ngModel)]="leave.SId" #SId="ngModel" class="form-control">
-                                <option value="undefined">Please select value</option>
+                                <option [ngValue]="undefined">Please select value</option>
                                 <option *ngFor="let session of sessions" [ngValue]="session.sessionId">
                                   {{session.sessions}}
                                 </option>
@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <label>applyTo<span class="text-danger">*</span></label>
                             <select required name="ManagerId" [(ngModel)]="leave.ManagerId" #ManagerId="ngModel" class="form-control">
-                                <option value="undefined">Please select value</option>
+                                <option [ngValue]="undefined">Please select value</option>
                                 <option *ngFor="let leaveApprove of leaveApproves" [ngValue]="leaveApprove.managerId">
                                   {{leaveApprove.managerName}}
                                 </option>

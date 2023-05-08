@@ -13,7 +13,7 @@
                         <div class="form-group">
                             <label>Employee Role<span class="text-danger">*</span></label>
                             <select required name="EmployeeRoleId" [(ngModel)]="manager.EmployeeRoleId" #EmployeeRoleId="ngModel" class="form-control">
-                                <option value="undefined">Please select value</option>
+                                <option [ngValue]="undefined">Please select value</option>
                                 <option *ngFor="let empRole of empRoles" [ngValue]="empRole.employeeRoleId">
                                   {{empRole.employeeRoleName}}
                                 </option>
@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label>JuniourEmployee<span class="text-danger">*</span></label>
                             <select required name="EmpId" [(ngModel)]="manager.EmpId" #EmpId="ngModel" class="form-control">
-                                <option value="undefined">Please select value</option>
+                                <option [ngValue]="undefined">Please select value</option>
                                 <option *ngFor="let employee of employees" [ngValue]="employee.empId">
                                   {{employee.firstName}}
                                 </option>
@@ -58,7 +58,7 @@
                         <div class="form-group">
                             <label>SeniourEmployee<span class="text-danger">*</span></label>
                             <select required name="EmpIdMgr" [(ngModel)]="manager.EmpIdMgr" #EmpIdMgr="ngModel" class="form-control">
-                                <option value="undefined">Please select value</option>
+                                <option [ngValue]="undefined">Please select value</option>
                                 <option *ngFor="let employeesMgr of employeesMgrs" [ngValue]="employeesMgr.empId">
                                   {{employeesMgr.firstName}}
                                 </option>
@@ -72,7 +72,7 @@
                         <div  class="form-group">
                             <label>departments<span class="text-danger">*</span></label>
                             <select required  name="Dept" [(ngModel)]="manager.DeptId" #DeptId="ngModel" class="form-control">
-                                <option value="undefined">Please select value</option>
+                                <option [ngValue]="undefined">Please select value</option>
                                 <option *ngFor="let department of departments" [ngValue]="department.deptId">
                                   {{department.deptName}}
                                 </option>

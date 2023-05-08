@@ -34,6 +34,8 @@ export class DetailsEmpSalaryComponent {
       this.empSalary.HouseRent=res.data.houseRent
       this.empSalary.Medical=res.data.medical
       this.empSalary.taxAmount=res.data.taxAmount
+      this.empSalary.FromDate=res.data.fromDate
+      this.empSalary.ToDate=res.data.toDate
     })
   }
   get activeModal() {

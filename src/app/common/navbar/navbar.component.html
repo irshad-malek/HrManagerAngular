@@ -10,6 +10,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li  class="nav-item">
+          <a class="nav-link" routerLink="profiles">profiles</a>
+        </li>
+        <li  class="nav-item">
           <a class="nav-link" routerLink="AttendanceSign">AttendanceSign</a>
         </li>
         <li *ngIf="service.isLoggedIns" class="nav-item active">
@@ -50,6 +53,16 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="leaveRequest">leaveRequest</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="LeaveHistory">LeaveHistory</a>
+        </li>
+        <li *ngIf="service.isLoggedIns" class="nav-item">
+          <a class="nav-link" routerLink="leaveHistoryManager">leaveHistoryManager</a>
+        </li>
+        <li  class="nav-item">
+          <a class="nav-link" routerLink="specificEmployeeSalary">specificEmployeeSalary</a>
+        </li>
+        
       </ul>
 
       

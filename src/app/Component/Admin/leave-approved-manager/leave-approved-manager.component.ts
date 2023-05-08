@@ -26,7 +26,13 @@ export class LeaveApprovedManagerComponent {
       return this.service.leaveApprovedByManager().subscribe(res=>{
         this.leaveRequests=res;
       })
-      this.router.navigate([''])
         })
+  }
+  LeaveReject(leaveId){
+    return this.service.leaveRejectByManager(leaveId).subscribe(res=>{
+      return this.service.leaveApprovedByManager().subscribe(res=>{
+        this.leaveRequests=res;
+      })
+    })
   }
 }
